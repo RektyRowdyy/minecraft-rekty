@@ -1,0 +1,56 @@
+/* Minecraft Font Declarations */
+@font-face {
+  font-family: 'Minecraft';
+  src: url('../assets/fonts/Minecraft.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('../assets/fonts/Minecraft-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Font utility classes */
+.minecraft-font {
+  font-family: 'Minecraft', monospace;
+  font-size: 16px;
+  line-height: 1.2;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+}
+
+.minecraft-font-small {
+  font-family: 'Minecraft', monospace;
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.minecraft-font-large {
+  font-family: 'Minecraft', monospace;
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.minecraft-font-xl {
+  font-family: 'Minecraft', monospace;
+  font-size: 32px;
+  line-height: 1.2;
+}
+
+.minecraft-font-2xl {
+  font-family: 'Minecraft', monospace;
+  font-size: 48px;
+  line-height: 1.2;
+}
+
+.minecraft-font-3xl {
+  font-family: 'Minecraft', monospace;
+  font-size: 64px;
+  line-height: 1.2;
+}

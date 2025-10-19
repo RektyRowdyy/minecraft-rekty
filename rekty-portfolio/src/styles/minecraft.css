@@ -1,0 +1,183 @@
+/* Minecraft Theme Variables */
+:root {
+  /* Colors */
+  --minecraft-grass-top: #7fb238;
+  --minecraft-grass-side: #5d7c15;
+  --minecraft-dirt: #8b4513;
+  --minecraft-stone: #7d7d7d;
+  --minecraft-cobblestone: #6b6b6b;
+  --minecraft-wood: #9c7853;
+  --minecraft-gold: #fcee4b;
+  --minecraft-diamond: #5cdbd5;
+  --minecraft-iron: #d8d8d8;
+  --minecraft-emerald: #17dd62;
+  --minecraft-redstone: #dc143c;
+  --minecraft-lapis: #1e478f;
+  --minecraft-obsidian: #0f0a19;
+  --minecraft-netherite: #654740;
+  
+  /* UI Colors */
+  --minecraft-gui-bg: #383838;
+  --minecraft-gui-border: #000000;
+  --minecraft-gui-light: #ffffff;
+  --minecraft-gui-shadow: #1a1a1a;
+  --minecraft-button-bg: #c0c0c0;
+  --minecraft-button-hover: #e0e0e0;
+  --minecraft-button-active: #a0a0a0;
+  --minecraft-hotbar: #2e2e2e;
+  
+  /* Sky colors */
+  --minecraft-sky-day: #87ceeb;
+  --minecraft-sky-night: #191970;
+  --minecraft-horizon: #add8e6;
+  
+  /* Text colors */
+  --minecraft-text-white: #ffffff;
+  --minecraft-text-black: #000000;
+  --minecraft-text-gray: #aaaaaa;
+  --minecraft-text-yellow: #ffff55;
+  --minecraft-text-green: #55ff55;
+  --minecraft-text-red: #ff5555;
+  --minecraft-text-blue: #5555ff;
+  
+  /* Shadows and effects */
+  --minecraft-text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+  --minecraft-box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+  --minecraft-inset-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.2), 
+                             inset -2px -2px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Minecraft Button Styles */
+.minecraft-button {
+  background: var(--minecraft-button-bg);
+  border: 2px solid;
+  border-color: var(--minecraft-gui-light) var(--minecraft-gui-shadow) var(--minecraft-gui-shadow) var(--minecraft-gui-light);
+  color: var(--minecraft-text-black);
+  font-family: 'Minecraft', monospace;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: all 0.1s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  font-size: 16px;
+  box-shadow: var(--minecraft-box-shadow);
+}
+
+.minecraft-button:hover {
+  background: var(--minecraft-button-hover);
+  border-color: var(--minecraft-gui-light) var(--minecraft-gui-shadow) var(--minecraft-gui-shadow) var(--minecraft-gui-light);
+}
+
+.minecraft-button:active {
+  background: var(--minecraft-button-active);
+  border-color: var(--minecraft-gui-shadow) var(--minecraft-gui-light) var(--minecraft-gui-light) var(--minecraft-gui-shadow);
+  box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.5);
+  transform: translate(1px, 1px);
+}
+
+/* Minecraft Block Styles */
+.minecraft-block {
+  width: 64px;
+  height: 64px;
+  border: 2px solid;
+  border-color: var(--minecraft-gui-light) var(--minecraft-gui-shadow) var(--minecraft-gui-shadow) var(--minecraft-gui-light);
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.minecraft-block:hover {
+  filter: brightness(1.2);
+  border-color: var(--minecraft-text-yellow);
+  box-shadow: 0 0 10px rgba(255, 255, 85, 0.5);
+}
+
+/* Minecraft Text Styles */
+.minecraft-text {
+  font-family: 'Minecraft', monospace;
+  text-shadow: var(--minecraft-text-shadow);
+  color: var(--minecraft-text-white);
+}
+
+.minecraft-text-yellow {
+  color: var(--minecraft-text-yellow);
+}
+
+.minecraft-text-green {
+  color: var(--minecraft-text-green);
+}
+
+.minecraft-text-red {
+  color: var(--minecraft-text-red);
+}
+
+.minecraft-text-blue {
+  color: var(--minecraft-text-blue);
+}
+
+/* Minecraft Container Styles */
+.minecraft-container {
+  background: var(--minecraft-gui-bg);
+  border: 2px solid;
+  border-color: var(--minecraft-gui-light) var(--minecraft-gui-shadow) var(--minecraft-gui-shadow) var(--minecraft-gui-light);
+  padding: 16px;
+  box-shadow: var(--minecraft-box-shadow);
+}
+
+/* Pixelated image rendering */
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+/* Minecraft animations */
+@keyframes minecraft-float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes minecraft-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(255, 255, 85, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 85, 0.8);
+  }
+}
+
+@keyframes minecraft-shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+.minecraft-float {
+  animation: minecraft-float 3s ease-in-out infinite;
+}
+
+.minecraft-glow {
+  animation: minecraft-glow 2s ease-in-out infinite;
+}
+
+.minecraft-shake {
+  animation: minecraft-shake 0.5s ease-in-out;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .minecraft-button {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
+  .minecraft-block {
+    width: 48px;
+    height: 48px;
+  }
+}

@@ -1,0 +1,113 @@
+/* Import Minecraft styles */
+@import './styles/fonts.css';
+@import './styles/minecraft.css';
+
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: 'Minecraft', monospace;
+  line-height: 1.2;
+  font-weight: 400;
+  
+  /* Use Minecraft sky colors */
+  background: linear-gradient(to bottom, var(--minecraft-sky-day) 0%, var(--minecraft-horizon) 100%);
+  color: var(--minecraft-text-white);
+  
+  font-synthesis: none;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: none;
+  -moz-osx-font-smoothing: unset;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Minecraft', monospace;
+  font-weight: bold;
+  text-shadow: var(--minecraft-text-shadow);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 32px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+p {
+  font-family: 'Minecraft', monospace;
+  line-height: 1.4;
+}
+
+/* Links */
+a {
+  color: var(--minecraft-text-yellow);
+  text-decoration: none;
+  font-family: 'Minecraft', monospace;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--minecraft-text-white);
+  text-shadow: var(--minecraft-text-shadow);
+}
+
+/* Buttons - Override default with Minecraft style */
+button {
+  font-family: 'Minecraft', monospace;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--minecraft-gui-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--minecraft-stone);
+  border: 1px solid var(--minecraft-gui-border);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--minecraft-iron);
+}
+
+/* Selection */
+::selection {
+  background: var(--minecraft-text-yellow);
+  color: var(--minecraft-text-black);
+}

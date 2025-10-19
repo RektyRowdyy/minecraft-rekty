@@ -1,0 +1,466 @@
+.about {
+  min-height: 100vh;
+  padding: 80px 20px;
+  background: linear-gradient(
+    135deg,
+    var(--minecraft-grass-side) 0%,
+    var(--minecraft-dirt) 50%,
+    var(--minecraft-stone) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 62px,
+      rgba(0,0,0,0.05) 62px,
+      rgba(0,0,0,0.05) 64px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 62px,
+      rgba(0,0,0,0.05) 62px,
+      rgba(0,0,0,0.05) 64px
+    );
+  pointer-events: none;
+}
+
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.about-title {
+  font-size: 48px;
+  color: var(--minecraft-text-yellow);
+  text-shadow: var(--minecraft-text-shadow);
+  margin-bottom: 20px;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 40px;
+  grid-template-areas: 
+    "stats bio"
+    "achievements achievements";
+}
+
+/* Player Stats Panel */
+.player-stats-panel {
+  grid-area: stats;
+  background: rgba(0, 0, 0, 0.8);
+  border: 2px solid var(--minecraft-gui-light);
+  box-shadow: var(--minecraft-box-shadow);
+  padding: 20px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.8s ease-out;
+}
+
+.player-stats-panel.stats-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.stats-header {
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--minecraft-gui-light);
+  padding-bottom: 10px;
+}
+
+.stats-title {
+  font-family: 'Minecraft', monospace;
+  color: var(--minecraft-text-white);
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.minecraft-version {
+  font-family: 'Minecraft', monospace;
+  color: var(--minecraft-text-gray);
+  font-size: 12px;
+}
+
+.stats-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  font-family: 'Minecraft', monospace;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateX(-20px);
+  animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.stat-label {
+  color: var(--minecraft-text-white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-icon {
+  font-size: 12px;
+}
+
+.stat-value {
+  color: var(--minecraft-text-yellow);
+  font-weight: bold;
+}
+
+.stat-item.health .stat-value {
+  color: var(--minecraft-text-red);
+}
+
+.stat-item.hunger .stat-value {
+  color: #8B4513;
+}
+
+/* Bio Section */
+.about-bio {
+  grid-area: bio;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.8s ease-out 0.2s;
+}
+
+.about-bio.bio-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.bio-book {
+  background: var(--minecraft-wood);
+  border: 3px solid #5d4e37;
+  box-shadow: 
+    var(--minecraft-box-shadow),
+    inset 2px 2px 0px rgba(255, 255, 255, 0.1);
+  padding: 24px;
+  position: relative;
+}
+
+.bio-book::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  right: 8px;
+  bottom: 8px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+.book-header {
+  text-align: center;
+  margin-bottom: 24px;
+  border-bottom: 2px solid #5d4e37;
+  padding-bottom: 16px;
+}
+
+.book-title {
+  font-family: 'Minecraft', monospace;
+  font-size: 24px;
+  color: var(--minecraft-text-black);
+  margin-bottom: 8px;
+  text-shadow: none;
+}
+
+.book-subtitle {
+  font-family: 'Minecraft', monospace;
+  font-size: 14px;
+  color: #5d4e37;
+  font-style: italic;
+}
+
+.book-content {
+  position: relative;
+}
+
+.bio-page {
+  margin-bottom: 24px;
+}
+
+.bio-paragraph {
+  font-family: 'Minecraft', monospace;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--minecraft-text-black);
+  margin-bottom: 16px;
+  text-align: justify;
+}
+
+.highlight-text {
+  color: var(--minecraft-text-blue);
+  font-weight: bold;
+}
+
+.bio-signature {
+  text-align: right;
+  border-top: 1px solid rgba(0, 0, 0, 0.2);
+  padding-top: 16px;
+}
+
+.signature-line {
+  font-family: 'Minecraft', monospace;
+  font-size: 16px;
+  color: var(--minecraft-text-black);
+  margin-bottom: 4px;
+}
+
+.signature-subtitle {
+  font-family: 'Minecraft', monospace;
+  font-size: 12px;
+  color: #5d4e37;
+}
+
+/* Achievements Section */
+.achievements-panel {
+  grid-area: achievements;
+  background: var(--minecraft-gui-bg);
+  border: 2px solid var(--minecraft-gui-light);
+  box-shadow: var(--minecraft-box-shadow);
+  padding: 24px;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.8s ease-out 0.4s;
+}
+
+.achievements-panel.achievements-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.achievements-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--minecraft-gui-light);
+  padding-bottom: 12px;
+}
+
+.achievements-title {
+  font-family: 'Minecraft', monospace;
+  font-size: 20px;
+  color: var(--minecraft-text-yellow);
+  text-shadow: var(--minecraft-text-shadow);
+}
+
+.achievements-count {
+  font-family: 'Minecraft', monospace;
+  font-size: 14px;
+  color: var(--minecraft-text-green);
+  background: rgba(0, 0, 0, 0.3);
+  padding: 4px 8px;
+  border: 1px solid var(--minecraft-text-green);
+}
+
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.achievement-item {
+  position: relative;
+  background: var(--minecraft-button-bg);
+  border: 2px solid var(--minecraft-gui-shadow);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: scale(0.8);
+  animation: achievementPop 0.6s ease-out forwards;
+  overflow: hidden;
+}
+
+.achievement-item.unlocked {
+  border-color: var(--minecraft-text-yellow);
+  background: linear-gradient(135deg, var(--minecraft-gold) 0%, var(--minecraft-text-yellow) 100%);
+  box-shadow: 
+    var(--minecraft-box-shadow),
+    0 0 15px rgba(255, 255, 85, 0.3);
+}
+
+.achievement-item.locked {
+  opacity: 0.5;
+  filter: grayscale(100%);
+}
+
+.achievement-item:hover.unlocked {
+  transform: scale(1.02);
+  box-shadow: 
+    var(--minecraft-box-shadow),
+    0 0 25px rgba(255, 255, 85, 0.5);
+}
+
+.achievement-icon {
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.achievement-content {
+  flex: 1;
+}
+
+.achievement-title {
+  font-family: 'Minecraft', monospace;
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--minecraft-text-black);
+  margin-bottom: 4px;
+}
+
+.achievement-description {
+  font-family: 'Minecraft', monospace;
+  font-size: 12px;
+  color: #333;
+  line-height: 1.3;
+}
+
+.achievement-glow {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: achievementGlow 2s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes achievementPop {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes achievementGlow {
+  from {
+    left: -100%;
+  }
+  to {
+    left: 100%;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "stats"
+      "bio"
+      "achievements";
+  }
+  
+  .about-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: 60px 16px;
+  }
+  
+  .about-title {
+    font-size: 28px;
+  }
+  
+  .player-stats-panel,
+  .bio-book,
+  .achievements-panel {
+    padding: 16px;
+  }
+  
+  .achievements-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .stat-item {
+    font-size: 12px;
+  }
+  
+  .bio-paragraph {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content {
+    gap: 24px;
+  }
+  
+  .about-header {
+    margin-bottom: 40px;
+  }
+  
+  .achievements-header {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+  
+  .achievement-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .achievement-icon {
+    margin: 0 auto;
+  }
+}

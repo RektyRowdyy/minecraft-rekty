@@ -1,0 +1,508 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background layers */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-sky {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--minecraft-sky-day) 0%,
+    var(--minecraft-horizon) 70%,
+    var(--minecraft-grass-top) 100%
+  );
+}
+
+/* Clouds */
+.hero-clouds {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60%;
+  z-index: 2;
+}
+
+.cloud {
+  position: absolute;
+  background: white;
+  border-radius: 0;
+  box-shadow: 
+    16px 0 0 white,
+    32px 0 0 white,
+    48px 0 0 white,
+    0 16px 0 white,
+    16px 16px 0 white,
+    32px 16px 0 white,
+    48px 16px 0 white,
+    8px 8px 0 white,
+    24px 8px 0 white,
+    40px 8px 0 white;
+  animation: cloudMove 20s linear infinite;
+}
+
+.cloud-1 {
+  top: 15%;
+  left: -200px;
+  width: 16px;
+  height: 16px;
+  animation-duration: 25s;
+}
+
+.cloud-2 {
+  top: 25%;
+  left: -300px;
+  width: 12px;
+  height: 12px;
+  animation-duration: 30s;
+  animation-delay: -10s;
+}
+
+.cloud-3 {
+  top: 35%;
+  left: -250px;
+  width: 14px;
+  height: 14px;
+  animation-duration: 35s;
+  animation-delay: -20s;
+}
+
+@keyframes cloudMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(100vw + 200px));
+  }
+}
+
+/* Terrain */
+.hero-terrain {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  z-index: 3;
+}
+
+.terrain-layer {
+  position: absolute;
+  width: 100%;
+  background-repeat: repeat-x;
+  background-size: 64px 64px;
+  image-rendering: pixelated;
+}
+
+.terrain-grass {
+  height: 64px;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    var(--minecraft-grass-top) 0%,
+    var(--minecraft-grass-top) 30%,
+    var(--minecraft-grass-side) 30%,
+    var(--minecraft-grass-side) 100%
+  );
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 62px,
+      rgba(0,0,0,0.1) 62px,
+      rgba(0,0,0,0.1) 64px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 62px,
+      rgba(0,0,0,0.1) 62px,
+      rgba(0,0,0,0.1) 64px
+    );
+}
+
+.terrain-dirt {
+  height: 128px;
+  bottom: 64px;
+  background: var(--minecraft-dirt);
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 62px,
+      rgba(0,0,0,0.1) 62px,
+      rgba(0,0,0,0.1) 64px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 62px,
+      rgba(0,0,0,0.1) 62px,
+      rgba(0,0,0,0.1) 64px
+    );
+}
+
+.terrain-stone {
+  height: 192px;
+  bottom: 192px;
+  background: var(--minecraft-stone);
+  background-image: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 62px,
+      rgba(0,0,0,0.1) 62px,
+      rgba(0,0,0,0.1) 64px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 62px,
+      rgba(0,0,0,0.1) 62px,
+      rgba(0,0,0,0.1) 64px
+    );
+}
+
+/* Content */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.hero-text {
+  margin-bottom: 40px;
+}
+
+.hero-title {
+  margin-bottom: 20px;
+}
+
+.title-line {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.hero-name {
+  font-size: 72px;
+  color: var(--minecraft-text-yellow);
+  text-shadow: 
+    3px 3px 0px rgba(0, 0, 0, 0.8),
+    0 0 20px rgba(255, 255, 85, 0.5);
+  animation: minecraft-glow 3s ease-in-out infinite;
+}
+
+.hero-subtitle {
+  font-size: 32px;
+  color: var(--minecraft-text-green);
+  margin-top: 16px;
+}
+
+.hero-description {
+  font-size: 18px;
+  color: var(--minecraft-text-white);
+  margin-bottom: 40px;
+  text-shadow: var(--minecraft-text-shadow);
+}
+
+/* Actions */
+.hero-actions {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+
+.hero-cta {
+  background: var(--minecraft-emerald);
+  color: var(--minecraft-text-black);
+  font-size: 18px;
+  padding: 12px 24px;
+}
+
+.hero-cta:hover {
+  background: var(--minecraft-diamond);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.hero-contact {
+  background: var(--minecraft-gold);
+  color: var(--minecraft-text-black);
+  font-size: 18px;
+  padding: 12px 24px;
+}
+
+.hero-contact:hover {
+  background: var(--minecraft-text-yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Scroll indicator */
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: var(--minecraft-text-white);
+  z-index: 10;
+}
+
+.scroll-arrow {
+  font-size: 32px;
+  font-family: 'Minecraft', monospace;
+  text-shadow: var(--minecraft-text-shadow);
+  margin-bottom: 8px;
+}
+
+.scroll-text {
+  font-size: 14px;
+  font-family: 'Minecraft', monospace;
+  text-shadow: var(--minecraft-text-shadow);
+}
+
+/* Floating decorations */
+.hero-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.floating-block {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.block-1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.block-2 {
+  top: 30%;
+  right: 15%;
+  animation-delay: 1.5s;
+}
+
+.block-3 {
+  top: 60%;
+  left: 20%;
+  animation-delay: 3s;
+}
+
+.block-face {
+  width: 100%;
+  height: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.3);
+  box-shadow: 
+    inset 2px 2px 0px rgba(255, 255, 255, 0.3),
+    inset -2px -2px 0px rgba(0, 0, 0, 0.3);
+}
+
+.block-grass {
+  background: linear-gradient(
+    to bottom,
+    var(--minecraft-grass-top) 0%,
+    var(--minecraft-grass-top) 30%,
+    var(--minecraft-grass-side) 30%,
+    var(--minecraft-grass-side) 100%
+  );
+}
+
+.block-diamond {
+  background: var(--minecraft-diamond);
+  box-shadow: 
+    inset 2px 2px 0px rgba(255, 255, 255, 0.5),
+    inset -2px -2px 0px rgba(0, 0, 0, 0.3),
+    0 0 15px rgba(92, 219, 213, 0.6);
+}
+
+.block-gold {
+  background: var(--minecraft-gold);
+  box-shadow: 
+    inset 2px 2px 0px rgba(255, 255, 255, 0.4),
+    inset -2px -2px 0px rgba(0, 0, 0, 0.3),
+    0 0 10px rgba(252, 238, 75, 0.4);
+}
+
+/* Hero entrance animation */
+.hero {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.hero-visible {
+  opacity: 1;
+}
+
+/* Fade in up animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Enhanced button interactions */
+.minecraft-button {
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.minecraft-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.minecraft-button:hover::before {
+  left: 100%;
+}
+
+.minecraft-button:active {
+  transform: translateY(2px);
+  box-shadow: inset 2px 2px 0px rgba(0, 0, 0, 0.5);
+}
+
+/* Enhanced floating block animations */
+.floating-block {
+  transition: transform 0.1s ease-out;
+}
+
+.floating-block:hover {
+  transform: scale(1.1) !important;
+  filter: brightness(1.2);
+}
+
+/* Scroll indicator enhancement */
+.hero-scroll-indicator {
+  transition: all 0.3s ease;
+}
+
+.hero-scroll-indicator:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+
+.scroll-arrow:hover {
+  color: var(--minecraft-text-yellow);
+  animation-duration: 1s;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .hero-name {
+    font-size: 48px;
+  }
+  
+  .hero-subtitle {
+    font-size: 24px;
+  }
+  
+  .hero-description {
+    font-size: 16px;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-cta,
+  .hero-contact {
+    width: 200px;
+    font-size: 16px;
+  }
+  
+  .floating-block {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .terrain-layer {
+    background-size: 32px 32px;
+  }
+  
+  .terrain-grass {
+    height: 32px;
+  }
+  
+  .terrain-dirt {
+    height: 64px;
+    bottom: 32px;
+  }
+  
+  .terrain-stone {
+    height: 96px;
+    bottom: 96px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 0 16px;
+  }
+  
+  .hero-name {
+    font-size: 36px;
+  }
+  
+  .hero-subtitle {
+    font-size: 20px;
+  }
+  
+  .hero-description {
+    font-size: 14px;
+  }
+  
+  .cloud {
+    display: none;
+  }
+}

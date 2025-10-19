@@ -1,0 +1,218 @@
+/* Base Minecraft Button Styles */
+.minecraft-button {
+  position: relative;
+  border: 2px solid;
+  border-color: var(--minecraft-gui-light) var(--minecraft-gui-shadow) var(--minecraft-gui-shadow) var(--minecraft-gui-light);
+  color: var(--minecraft-text-black);
+  font-family: 'Minecraft', monospace;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  box-shadow: var(--minecraft-box-shadow);
+  background: var(--minecraft-button-bg);
+  overflow: hidden;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.minecraft-button:hover {
+  background: var(--minecraft-button-hover);
+  border-color: var(--minecraft-gui-light) var(--minecraft-gui-shadow) var(--minecraft-gui-shadow) var(--minecraft-gui-light);
+}
+
+.minecraft-button:active {
+  background: var(--minecraft-button-active);
+  border-color: var(--minecraft-gui-shadow) var(--minecraft-gui-light) var(--minecraft-gui-light) var(--minecraft-gui-shadow);
+  box-shadow: inset 1px 1px 0px rgba(0, 0, 0, 0.5);
+  transform: translate(1px, 1px);
+}
+
+.minecraft-button:disabled {
+  background: var(--minecraft-stone);
+  color: var(--minecraft-text-gray);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.minecraft-button:disabled:hover {
+  background: var(--minecraft-stone);
+  transform: none;
+}
+
+/* Button Content */
+.minecraft-button__content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hover Effect */
+.minecraft-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+  z-index: 1;
+}
+
+.minecraft-button:hover::before {
+  left: 100%;
+}
+
+/* Size Variants */
+.minecraft-button--small {
+  padding: 4px 8px;
+  font-size: 12px;
+  border-width: 1px;
+}
+
+.minecraft-button--medium {
+  padding: 8px 16px;
+  font-size: 16px;
+}
+
+.minecraft-button--large {
+  padding: 12px 24px;
+  font-size: 18px;
+}
+
+.minecraft-button--xl {
+  padding: 16px 32px;
+  font-size: 20px;
+}
+
+/* Style Variants */
+.minecraft-button--default {
+  background: var(--minecraft-button-bg);
+  color: var(--minecraft-text-black);
+}
+
+.minecraft-button--primary {
+  background: var(--minecraft-emerald);
+  color: var(--minecraft-text-black);
+}
+
+.minecraft-button--primary:hover {
+  background: var(--minecraft-diamond);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.minecraft-button--secondary {
+  background: var(--minecraft-gold);
+  color: var(--minecraft-text-black);
+}
+
+.minecraft-button--secondary:hover {
+  background: var(--minecraft-text-yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.minecraft-button--danger {
+  background: var(--minecraft-redstone);
+  color: var(--minecraft-text-white);
+}
+
+.minecraft-button--danger:hover {
+  background: var(--minecraft-text-red);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.minecraft-button--stone {
+  background: var(--minecraft-stone);
+  color: var(--minecraft-text-white);
+}
+
+.minecraft-button--stone:hover {
+  background: var(--minecraft-cobblestone);
+}
+
+.minecraft-button--wood {
+  background: var(--minecraft-wood);
+  color: var(--minecraft-text-black);
+}
+
+.minecraft-button--wood:hover {
+  background: #b8895f;
+}
+
+.minecraft-button--iron {
+  background: var(--minecraft-iron);
+  color: var(--minecraft-text-black);
+}
+
+.minecraft-button--iron:hover {
+  background: #f0f0f0;
+}
+
+.minecraft-button--diamond {
+  background: var(--minecraft-diamond);
+  color: var(--minecraft-text-black);
+  box-shadow: 
+    var(--minecraft-box-shadow),
+    0 0 15px rgba(92, 219, 213, 0.4);
+}
+
+.minecraft-button--diamond:hover {
+  box-shadow: 
+    0 4px 8px rgba(0, 0, 0, 0.3),
+    0 0 20px rgba(92, 219, 213, 0.6);
+  transform: translateY(-2px);
+}
+
+.minecraft-button--netherite {
+  background: var(--minecraft-netherite);
+  color: var(--minecraft-text-white);
+  border-color: #4a3b34 #2d2520 #2d2520 #4a3b34;
+}
+
+.minecraft-button--netherite:hover {
+  background: #7a5d54;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Special Effects */
+.minecraft-button--glow {
+  animation: minecraft-glow 2s ease-in-out infinite;
+}
+
+.minecraft-button--shake:hover {
+  animation: minecraft-shake 0.5s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .minecraft-button--large {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+  
+  .minecraft-button--xl {
+    padding: 12px 24px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .minecraft-button {
+    min-height: 44px; /* Minimum touch target size */
+  }
+  
+  .minecraft-button--small {
+    padding: 6px 12px;
+    font-size: 14px;
+  }
+  
+  .minecraft-button--medium {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
