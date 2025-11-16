@@ -32,7 +32,7 @@ const Hero = () => {
   };
 
   return (
-    <section className={`hero ${isVisible ? 'hero-visible' : ''}`}>
+    <section id="hero" className={`hero ${isVisible ? 'hero-visible' : ''}`}>
       <div className="hero-background">
         <div 
           className="hero-sky"
@@ -74,7 +74,7 @@ const Hero = () => {
               Hello, I'm
             </span>
             <span className="title-line hero-name fade-in-up" style={{ animationDelay: '0.4s' }}>
-              REKTY
+              HRIDYA
             </span>
             <span className="title-line hero-subtitle fade-in-up" style={{ animationDelay: '0.6s' }}>
               Full Stack Developer
@@ -100,16 +100,6 @@ const Hero = () => {
           </button>
         </div>
         
-        <div className="hero-scroll-indicator fade-in-up" style={{ animationDelay: '1.2s' }}>
-          <div 
-            className="scroll-arrow minecraft-float"
-            onClick={handleScrollClick}
-            style={{ cursor: 'pointer' }}
-          >
-            ↓
-          </div>
-          <span className="scroll-text">Scroll to explore</span>
-        </div>
       </div>
       
       <div className="hero-decorations">

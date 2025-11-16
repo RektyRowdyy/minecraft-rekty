@@ -23,9 +23,9 @@ const About = () => {
   }, []);
 
   const playerStats = [
-    { label: 'Player', value: 'REKTY', icon: '👤' },
+    { label: 'Player', value: 'Hridya', icon: '👤' },
     { label: 'Level', value: 'Senior Developer', icon: '⭐' },
-    { label: 'XP', value: '5+ years coding', icon: '✨' },
+    { label: 'XP', value: '2+ years coding', icon: '✨' },
     { label: 'Health', value: '❤️❤️❤️❤️❤️', special: 'health' },
     { label: 'Hunger', value: '🍖🍖🍖🍖🍖', special: 'hunger' },
     { label: 'Location', value: 'Remote World', icon: '🌍' },
@@ -84,7 +84,7 @@ const About = () => {
           <div className={`player-stats-panel ${statsVisible ? 'stats-visible' : ''}`}>
             <div className="stats-header">
               <div className="stats-title">Debug Screen (F3)</div>
-              <div className="minecraft-version">Rekty Portfolio v1.0</div>
+              <div className="minecraft-version">Hridya Portfolio v1.0</div>
             </div>
             
             <div className="stats-grid">
@@ -115,7 +115,7 @@ const About = () => {
               <div className="book-content">
                 <div className="bio-page">
                   <p className="bio-paragraph">
-                    Hello! I'm <span className="highlight-text">REKTY</span>, a passionate full-stack developer 
+                    Hello! I'm <span className="highlight-text">HRIDYA</span>, a passionate full-stack developer 
                     who loves building digital worlds with code. Like a skilled Minecraft builder, 
                     I craft applications one block (line of code) at a time.
                   </p>
@@ -133,7 +133,7 @@ const About = () => {
                 </div>
                 
                 <div className="bio-signature">
-                  <div className="signature-line">- REKTY</div>
+                  <div className="signature-line">- HRIDYA</div>
                   <div className="signature-subtitle">Full Stack Developer</div>
                 </div>
               </div>

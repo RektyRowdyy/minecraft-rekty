@@ -1,6 +1,6 @@
 /* Minecraft Theme Variables */
 :root {
-  /* Colors */
+  /* Base Colors - Light Theme */
   --minecraft-grass-top: #7fb238;
   --minecraft-grass-side: #5d7c15;
   --minecraft-dirt: #8b4513;
@@ -15,6 +15,14 @@
   --minecraft-lapis: #1e478f;
   --minecraft-obsidian: #0f0a19;
   --minecraft-netherite: #654740;
+  
+  /* Material variations */
+  --minecraft-stone-dark: #666666;
+  --minecraft-wood-dark: #7a5f42;
+  --minecraft-iron-dark: #b8b8b8;
+  --minecraft-iron-light: #f0f0f0;
+  --minecraft-gold-light: #ffff99;
+  --minecraft-diamond-light: #8ff5f0;
   
   /* UI Colors */
   --minecraft-gui-bg: #383838;
@@ -39,12 +47,94 @@
   --minecraft-text-green: #55ff55;
   --minecraft-text-red: #ff5555;
   --minecraft-text-blue: #5555ff;
+  --minecraft-text-light: #f5f5f5;
+  --minecraft-text-muted: #cccccc;
   
   /* Shadows and effects */
   --minecraft-text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
   --minecraft-box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
   --minecraft-inset-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.2), 
                              inset -2px -2px 0px rgba(0, 0, 0, 0.5);
+  
+  /* Theme transitions */
+  --theme-transition: all 0.3s ease;
+}
+
+/* Dark Theme Variables */
+[data-theme="dark"] {
+  /* Dark Theme Base Colors */
+  --minecraft-grass-top: #2d5016;
+  --minecraft-grass-side: #1a3009;
+  --minecraft-dirt: #3d1f0a;
+  --minecraft-stone: #3a3a3a;
+  --minecraft-cobblestone: #2d2d2d;
+  --minecraft-wood: #4a3526;
+  --minecraft-gold: #b8a935;
+  --minecraft-diamond: #2a5d5a;
+  --minecraft-iron: #6b6b6b;
+  --minecraft-emerald: #0a7d2a;
+  --minecraft-redstone: #7a0e1c;
+  --minecraft-lapis: #0f2456;
+  --minecraft-obsidian: #0a0614;
+  --minecraft-netherite: #3d2520;
+  
+  /* Dark Theme Material Variations */
+  --minecraft-stone-dark: #2d2d2d;
+  --minecraft-wood-dark: #332015;
+  --minecraft-iron-dark: #555555;
+  --minecraft-iron-light: #8a8a8a;
+  --minecraft-gold-light: #d4c954;
+  --minecraft-diamond-light: #3d7a76;
+  
+  /* Dark Theme Specific Materials */
+  --minecraft-blackstone: #2c2c2c;
+  --minecraft-blackstone-dark: #1a1a1a;
+  --minecraft-deepslate: #646464;
+  --minecraft-deepslate-dark: #505050;
+  --minecraft-basalt: #3c3c3c;
+  --minecraft-soul-sand: #4a3429;
+  --minecraft-soul-fire: #1ce3d6;
+  --minecraft-warped-stem: #3a8e8c;
+  --minecraft-crimson-stem: #8e3a3a;
+  --minecraft-glowstone: #ffea80;
+  --minecraft-end-stone: #ddbf94;
+  --minecraft-purpur: #a97ca9;
+  --minecraft-chorus: #8a5a8a;
+  
+  /* Dark UI Colors */
+  --minecraft-gui-bg: #1a1a1a;
+  --minecraft-gui-border: #000000;
+  --minecraft-gui-light: #cccccc;
+  --minecraft-gui-shadow: #0a0a0a;
+  --minecraft-button-bg: #4a4a4a;
+  --minecraft-button-hover: #5a5a5a;
+  --minecraft-button-active: #3a3a3a;
+  --minecraft-hotbar: #1e1e1e;
+  
+  /* Dark Sky Colors */
+  --minecraft-sky-day: #0d1421;
+  --minecraft-sky-night: #050812;
+  --minecraft-horizon: #1a2332;
+  --minecraft-cave-bg: #2d2d2d;
+  --minecraft-nether-bg: #3d1a1a;
+  --minecraft-end-bg: #1a1a2d;
+  
+  /* Dark Text Colors */
+  --minecraft-text-white: #f0f0f0;
+  --minecraft-text-black: #1a1a1a;
+  --minecraft-text-gray: #888888;
+  --minecraft-text-yellow: #ffff80;
+  --minecraft-text-green: #80ff80;
+  --minecraft-text-red: #ff8080;
+  --minecraft-text-blue: #8080ff;
+  --minecraft-text-light: #e0e0e0;
+  --minecraft-text-muted: #999999;
+  
+  /* Dark Shadows and Effects */
+  --minecraft-text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.9);
+  --minecraft-box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.8);
+  --minecraft-inset-shadow: inset 2px 2px 0px rgba(255, 255, 255, 0.1), 
+                             inset -2px -2px 0px rgba(0, 0, 0, 0.8);
 }
 
 /* Minecraft Button Styles */
